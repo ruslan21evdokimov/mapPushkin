@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_00d706cd19c39451599de4b0cc21e1e7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<style>
+.pulse-marker {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  font-size: 28px;
+}
+.pulse-marker::after {
+  content: "";
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0; left: 0;
+  background: rgba(255,0,0,0.3);
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.7; }
+  50% { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(0.8); opacity: 0.7; }
+}
+</style>
+    
+<div style="
+    position: fixed; 
+    bottom: 30px; right: 30px; width: 280px; 
+    background: white; padding: 12px; 
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    z-index:9999;">
+<b>Музей-заповедник Архангельское</b><br>
+🛡️ Святые ворота<br>
+🏛️ Храм-усыпальница "Колонада"<br>
+🌿 Терраса (итальянский парк)<br>
+🏰 Дворец в Архангельском<br><br>
+<b>Интерактивная карта мероприятия «По машинам»</b>
+</div>
+    
+<style>
+.leaflet-control-attribution {
+    display: none !important;
+}
+</style>
+    
+            <div class="folium-map" id="map_00d706cd19c39451599de4b0cc21e1e7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_00d706cd19c39451599de4b0cc21e1e7 = L.map(
+                "map_00d706cd19c39451599de4b0cc21e1e7",
+                {
+                    center: [55.784534, 37.28408],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 16,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_00d706cd19c39451599de4b0cc21e1e7);
+
+            
+
+        
+    
+            var tile_layer_d0d6fa7a8bcd45db6ab7da628680f42a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d0d6fa7a8bcd45db6ab7da628680f42a.addTo(map_00d706cd19c39451599de4b0cc21e1e7);
+        
+    
+            var marker_f0fdd6662891882a61156fc374c0e0f8 = L.marker(
+                [55.784539, 37.290643],
+                {
+}
+            ).addTo(map_00d706cd19c39451599de4b0cc21e1e7);
+        
+    
+            var div_icon_aa6efc9021249ac6d0a28b304b7ca40c = L.divIcon({
+  "html": "\u003cdiv class=\u0027pulse-marker\u0027\u003e\ud83d\udee1\ufe0f\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_7599298024ecc41798ffa073a3ae822c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_453e7a362fafd9a56efca821e63f7f6d = $(`<div id="html_453e7a362fafd9a56efca821e63f7f6d" style="width: 100.0%; height: 100.0%;">     <style>     .card {         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;         padding: 12px;         border-radius: 15px;         background: #ffffff;         box-shadow: 0 8px 20px rgba(0,0,0,0.25);         width: 270px;     }     .card h4 {         margin: 0;         padding-bottom: 10px;         font-size: 20px;         border-bottom: 1px solid #ddd;         color: #2E7D32;     }     .tab input { display: none; }     .tab label {         display: block;         padding: 10px;         margin-top: 6px;         border-radius: 10px;         background: linear-gradient(90deg, #FF7E5F, #FEB47B);         color: white;         font-size: 14px;         cursor: pointer;         text-align: center;         transition: all 0.3s ease;     }     .tab label:hover {         transform: scale(1.05);         background: linear-gradient(90deg, #FFB88C, #FF7E5F);     }     .tab-content {         display: none;         margin-top: 10px;         font-size: 14px;         color: #333;     }     .tab input:checked + label + .tab-content {         display: block;     }     </style>      <div class="card">       <h4>Святые ворота</h4>        <div class="tab">         <input type="radio" id="a1_date" name="a1" checked>         <label for="a1_date">Дата создания</label>         <div class="tab-content">📅 Род Юсуповых происходит от правителя Ногайской Орды Юсуф-бия — одного из государств, на которое распалась Империя Чингисхана. По легендам, род ведёт своё происхождение и от самого пророка Мухаммеда.</div>       </div>        <div class="tab">         <input type="radio" id="a1_builder" name="a1">         <label for="a1_builder">История создания</label>         <div class="tab-content">👷 После поражения Ногайской Орды Юсуповы поступили на службу к русскому царю Алексею Михайловичу. Изначально род был мусульманским, но всё изменилось при Абдул-мурзе, правнуке Юсуф-бия. Считается, что именно он во время пира случайно оскорбил патриарха Иоакима, подав ему гуся в Великий пост. Узнав об этом, царь Фёдор Алексеевич разгневался. Чтобы вернуть расположение царя, Абдул-мурза принял православие и стал князем Дмитрием Сийюшевичем Юсуповым. Существует легенда: в ту же ночь пророк Мухаммед явился ему во сне и проклял его род. «В каждом поколении будет только один наследник мужского пола», — сказал он. И действительно, на протяжении всей истории у Юсуповых никогда не рождалось больше одного наследника в колене.</div>       </div>        <div class="tab">         <input type="radio" id="a1_history" name="a1">         <label for="a1_history">Интересный факт</label>         <div class="tab-content">📖 С проклятием связана особая история. Николай Борисович Юсупов-младший, женившись на Татьяне Рибопьер, рассказал ей о семейной тайне. Проходя однажды под аркой ворот, Татьяна мысленно попросила у судьбы сохранить жизнь мужу. Она верила, что желание исполнится — и действительно, Николай Борисович прожил долгую жизнь и дожил до 80 лет.С тех пор считается, что ворота обладают таинственной силой. Чтобы желание сбылось, нужно: 1. Чётко сформулировать его про себя; 2. Представить в образе; 3. Повторить три раза.</div>       </div>     </div>     </div>`)[0];
+                popup_7599298024ecc41798ffa073a3ae822c.setContent(html_453e7a362fafd9a56efca821e63f7f6d);
+            
+        
+
+        marker_f0fdd6662891882a61156fc374c0e0f8.bindPopup(popup_7599298024ecc41798ffa073a3ae822c)
+        ;
+
+        
+    
+    
+            marker_f0fdd6662891882a61156fc374c0e0f8.bindTooltip(
+                `<div>
+                     Святые ворота
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f0fdd6662891882a61156fc374c0e0f8.setIcon(div_icon_aa6efc9021249ac6d0a28b304b7ca40c);
+            
+    
+            var marker_f4f2c727c528ee9868a337688053dbf8 = L.marker(
+                [55.784476, 37.289319],
+                {
+}
+            ).addTo(map_00d706cd19c39451599de4b0cc21e1e7);
+        
+    
+            var div_icon_cad64b3b26a6e425bd638f4c924f7519 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-size:28px;\u0027\u003e\ud83c\udfdb\ufe0f\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_56450cf718d291ebd2343f58d1ac06f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_92d457bc6c0b1246328901b15ff109f0 = $(`<div id="html_92d457bc6c0b1246328901b15ff109f0" style="width: 100.0%; height: 100.0%;">     <style>     .card {         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;         padding: 12px;         border-radius: 15px;         background: #ffffff;         box-shadow: 0 8px 20px rgba(0,0,0,0.25);         width: 270px;     }     .card h4 {         margin: 0;         padding-bottom: 10px;         font-size: 20px;         border-bottom: 1px solid #ddd;         color: #2E7D32;     }     .tab input { display: none; }     .tab label {         display: block;         padding: 10px;         margin-top: 6px;         border-radius: 10px;         background: linear-gradient(90deg, #FF7E5F, #FEB47B);         color: white;         font-size: 14px;         cursor: pointer;         text-align: center;         transition: all 0.3s ease;     }     .tab label:hover {         transform: scale(1.05);         background: linear-gradient(90deg, #FFB88C, #FF7E5F);     }     .tab-content {         display: none;         margin-top: 10px;         font-size: 14px;         color: #333;     }     .tab input:checked + label + .tab-content {         display: block;     }     </style>      <div class="card">       <h4>Колонада</h4>        <div class="tab">         <input type="radio" id="a2_date" name="a2" checked>         <label for="a2_date">Дата создания</label>         <div class="tab-content">📅 Храм-усыпальница в Архангельском был построен в начале XX века, после трагической смерти старшего сына княгини Зинаиды Юсуповой Николая в 1908 году.</div>       </div>        <div class="tab">         <input type="radio" id="a2_builder" name="a2">         <label for="a2_builder">История создания</label>         <div class="tab-content">👷 В конце XIX – начале XX века усадьбой часто управляла княгиня Зинаида Николаевна Юсупова (1861–1939) вместе с супругом графом Феликсом Феликсовичем Сумароковым-Эльстоном и сыновьями Николаем и Феликсом-младшим. Для проекта был приглашён выдающийся русский архитектор Р.И. Клейн (1858–1924), мастер исторических стилей. Он использовал приёмы неоготики, русского стиля и неоклассицизма в своих московских постройках, включая здание ЦУМа, Средние торговые ряды на Красной площади и ГМИИ им. А.С. Пушкина. Храм-усыпальница в Архангельском стал последним аккордом в архитектурной симфонии усадьбы, гармонично завершив ансамбль, складывавшийся более двухсот лет.</div>       </div>        <div class="tab">         <input type="radio" id="a2_history" name="a2">         <label for="a2_history">Интересный факт</label>         <div class="tab-content">📖 Храм-усыпальница известна как «Колоннада» и считается важным архитектурным элементом усадьбы. Она объединяет элементы разных исторических стилей, демонстрируя мастерство архитектора Р.И. Клейна и служит памятником семье Юсуповых и трагическим событиям их истории.</div>       </div>     </div>     </div>`)[0];
+                popup_56450cf718d291ebd2343f58d1ac06f5.setContent(html_92d457bc6c0b1246328901b15ff109f0);
+            
+        
+
+        marker_f4f2c727c528ee9868a337688053dbf8.bindPopup(popup_56450cf718d291ebd2343f58d1ac06f5)
+        ;
+
+        
+    
+    
+            marker_f4f2c727c528ee9868a337688053dbf8.bindTooltip(
+                `<div>
+                     Храм-усыпальница - Колонада
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f4f2c727c528ee9868a337688053dbf8.setIcon(div_icon_cad64b3b26a6e425bd638f4c924f7519);
+            
+    
+            var marker_14498d158dea3853d94a4a120fbf721e = L.marker(
+                [55.786615, 37.284523],
+                {
+}
+            ).addTo(map_00d706cd19c39451599de4b0cc21e1e7);
+        
+    
+            var div_icon_aa61b2a352d1b4caadd88acb62064450 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-size:28px;\u0027\u003e\ud83c\udf3f\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_e903abca3f35ac098112c02b00953e5c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d3057286b6401f1ba76bfec60079a4be = $(`<div id="html_d3057286b6401f1ba76bfec60079a4be" style="width: 100.0%; height: 100.0%;">     <style>     .card {         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;         padding: 12px;         border-radius: 15px;         background: #ffffff;         box-shadow: 0 8px 20px rgba(0,0,0,0.25);         width: 270px;     }     .card h4 {         margin: 0;         padding-bottom: 10px;         font-size: 20px;         border-bottom: 1px solid #ddd;         color: #2E7D32;     }     .tab input { display: none; }     .tab label {         display: block;         padding: 10px;         margin-top: 6px;         border-radius: 10px;         background: linear-gradient(90deg, #FF7E5F, #FEB47B);         color: white;         font-size: 14px;         cursor: pointer;         text-align: center;         transition: all 0.3s ease;     }     .tab label:hover {         transform: scale(1.05);         background: linear-gradient(90deg, #FFB88C, #FF7E5F);     }     .tab-content {         display: none;         margin-top: 10px;         font-size: 14px;         color: #333;     }     .tab input:checked + label + .tab-content {         display: block;     }     </style>      <div class="card">       <h4>Терраса</h4>        <div class="tab">         <input type="radio" id="a3_date" name="a3" checked>         <label for="a3_date">Дата создания</label>         <div class="tab-content">📅 Терраса в итальянском стиле была создана в конце XIX — начале XX века, в период, когда в России активно развивались регулярные сады и парки, вдохновлённые европейскими традициями.</div>       </div>        <div class="tab">         <input type="radio" id="a3_builder" name="a3">         <label for="a3_builder">История создания</label>         <div class="tab-content">👷 Вдохновлённая античными и ренессансными образцами, терраса была спроектирована с учётом особенностей местного рельефа и архитектурного ансамбля. Основными элементами дизайна стали симметричные дорожки, декоративные растения, каменные балюстрады и элементы водного оформления, такие как фонтаны и каскады. Архитектурное решение террасы сочетает элементы неоклассицизма и барокко, что придаёт пространству величественность и гармонию. Особое внимание уделено созданию панорамных видов, характерных для итальянских садов, что позволяет посетителям наслаждаться красотой окружающего ландшафта.</div>       </div>        <div class="tab">         <input type="radio" id="a3_history" name="a3">         <label for="a3_history">Интересный факт</label>         <div class="tab-content">📖 Терраса в итальянском стиле является примером успешного адаптирования европейских садовых традиций к российским условиям. Её создание стало возможным благодаря использованию местных материалов и учёту климатических особенностей, что позволило сохранить элементы итальянского сада в условиях средней полосы России. Обзорная точка с бюстами Цезаря и Августа. Отличное место для фотографий и отдыха.</div>       </div>     </div>     </div>`)[0];
+                popup_e903abca3f35ac098112c02b00953e5c.setContent(html_d3057286b6401f1ba76bfec60079a4be);
+            
+        
+
+        marker_14498d158dea3853d94a4a120fbf721e.bindPopup(popup_e903abca3f35ac098112c02b00953e5c)
+        ;
+
+        
+    
+    
+            marker_14498d158dea3853d94a4a120fbf721e.bindTooltip(
+                `<div>
+                     Терраса (итальянский парк)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_14498d158dea3853d94a4a120fbf721e.setIcon(div_icon_aa61b2a352d1b4caadd88acb62064450);
+            
+    
+            var marker_b4f68b38ad9d8428a4bb0313de46ed6f = L.marker(
+                [55.787357, 37.284742],
+                {
+}
+            ).addTo(map_00d706cd19c39451599de4b0cc21e1e7);
+        
+    
+            var div_icon_d66c12e9bcb597bf13f56ba614758ab6 = L.divIcon({
+  "html": "\u003cdiv class=\u0027pulse-marker\u0027\u003e\ud83c\udff0\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_2a6f7e0712ff54baa012489ec5efb60b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_89d4578ae99a3a28e5670a810d69b2c3 = $(`<div id="html_89d4578ae99a3a28e5670a810d69b2c3" style="width: 100.0%; height: 100.0%;">     <style>     .card {         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;         padding: 12px;         border-radius: 15px;         background: #ffffff;         box-shadow: 0 8px 20px rgba(0,0,0,0.25);         width: 270px;     }     .card h4 {         margin: 0;         padding-bottom: 10px;         font-size: 20px;         border-bottom: 1px solid #ddd;         color: #2E7D32;     }     .tab input { display: none; }     .tab label {         display: block;         padding: 10px;         margin-top: 6px;         border-radius: 10px;         background: linear-gradient(90deg, #FF7E5F, #FEB47B);         color: white;         font-size: 14px;         cursor: pointer;         text-align: center;         transition: all 0.3s ease;     }     .tab label:hover {         transform: scale(1.05);         background: linear-gradient(90deg, #FFB88C, #FF7E5F);     }     .tab-content {         display: none;         margin-top: 10px;         font-size: 14px;         color: #333;     }     .tab input:checked + label + .tab-content {         display: block;     }     </style>      <div class="card">       <h4>Дворец</h4>        <div class="tab">         <input type="radio" id="a4_date" name="a4" checked>         <label for="a4_date">Дата создания</label>         <div class="tab-content">📅 Дворец в Архангельском был построен в конце XVIII — начале XIX века. Его строительство началось в 1784 году по проекту французского архитектора Герна и продолжалось почти 25 лет.</div>       </div>        <div class="tab">         <input type="radio" id="a4_builder" name="a4">         <label for="a4_builder">История создания</label>         <div class="tab-content">👷 Важную роль в создании усадьбы сыграли её владельцы из плеяды «русских европейцев» эпохи Просвещения. Князь Николай Алексеевич Голицын, выпускник Страсбургского университета, путешественник и дипломат, приобрёл в 1780 году в Париже проект архитектора Герна. Дворец строился долго: к 1809 году, после смерти князя, отделка ещё не была завершена. В 1810 году Архангельское стало собственностью князя Николая Борисовича Юсупова. В 1810–1820-х годах Юсупов завершил ансамбль усадьбы и наполнил Дворец произведениями искусства и редкими предметами, собранными за всю жизнь. Дворец пережил пожар 1820 года и войну 1812 года, сохранив парадное назначение.</div>       </div>        <div class="tab">         <input type="radio" id="a4_history" name="a4">         <label for="a4_history">Интересный факт</label>         <div class="tab-content">📖 Дворец является сердцем старинной подмосковной усадьбы и центром огромного дворцово-паркового ансамбля. Он построен в стиле классицизма и служил парадным пространством для приёма гостей и демонстрации произведений искусства. Он не только архитектурный памятник, но и редкий пример частного аристократического собрания искусства, сохранившегося в своём историческом окружении. Усадьба оставалась предметом гордости нескольких поколений семьи Юсуповых. Последней владелицей Дворца до Октябрьской революции была княгиня Зинаида Николаевна Юсупова, которая делала всё, чтобы сохранить и приумножить богатство усадьбы.</div>       </div>     </div>     </div>`)[0];
+                popup_2a6f7e0712ff54baa012489ec5efb60b.setContent(html_89d4578ae99a3a28e5670a810d69b2c3);
+            
+        
+
+        marker_b4f68b38ad9d8428a4bb0313de46ed6f.bindPopup(popup_2a6f7e0712ff54baa012489ec5efb60b)
+        ;
+
+        
+    
+    
+            marker_b4f68b38ad9d8428a4bb0313de46ed6f.bindTooltip(
+                `<div>
+                     Дворец
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b4f68b38ad9d8428a4bb0313de46ed6f.setIcon(div_icon_d66c12e9bcb597bf13f56ba614758ab6);
+            
+</script>
+</html>
